@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
-public class ClickManager : MonoBehaviour
+public class clickManager2 : MonoBehaviour
 {
 
     System.Random random = new System.Random();
@@ -25,7 +25,7 @@ public class ClickManager : MonoBehaviour
     {
 
         current_state = "first";
-        ranList = new List<string> { "flip", "flip", "flip2", "flip2", "flip", "flip" };
+        ranList = new List<string> { "flip", "flip", "flip2", "flip2", "flip3", "flip3" , "flip", "flip", "flip2", "flip2", "flip3", "flip3" };
         int n = ranList.Count;
         //https://stackoverflow.com/questions/273313/randomize-a-listt
 
@@ -110,7 +110,6 @@ public class ClickManager : MonoBehaviour
             if (hit.collider != null)
             {
 
-
                 if (hit.collider.gameObject.name == "0")
                 {
                     playAnimation(hit.collider.gameObject.name);
@@ -147,7 +146,37 @@ public class ClickManager : MonoBehaviour
                     playAnimation(hit.collider.gameObject.name);
                 }
 
+                if (hit.collider.gameObject.name == "6")
+                {
 
+                    playAnimation(hit.collider.gameObject.name);
+
+           
+                }
+
+                if (hit.collider.gameObject.name == "7")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+
+
+                if (hit.collider.gameObject.name == "8")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+
+                if (hit.collider.gameObject.name == "9")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+                if (hit.collider.gameObject.name == "10")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+                if (hit.collider.gameObject.name == "11")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
 
             }
         }

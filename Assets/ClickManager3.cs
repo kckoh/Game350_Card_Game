@@ -1,12 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using System;
 using UnityEngine.SceneManagement;
-public class ClickManager : MonoBehaviour
-{
 
+public class ClickManager3 : MonoBehaviour
+{
     System.Random random = new System.Random();
     string current_state;
     public List<Animator> animators;
@@ -25,7 +24,7 @@ public class ClickManager : MonoBehaviour
     {
 
         current_state = "first";
-        ranList = new List<string> { "flip", "flip", "flip2", "flip2", "flip", "flip" };
+        ranList = new List<string> { "flip", "flip", "flip2", "flip2", "flip3", "flip3", "flip", "flip", "flip2", "flip2", "flip3", "flip3", "flip", "flip", "flip2", "flip2" };
         int n = ranList.Count;
         //https://stackoverflow.com/questions/273313/randomize-a-listt
 
@@ -115,10 +114,7 @@ public class ClickManager : MonoBehaviour
                 {
                     playAnimation(hit.collider.gameObject.name);
 
-
                 }
-
-
                 if (hit.collider.gameObject.name == "1")
                 {
 
@@ -147,9 +143,54 @@ public class ClickManager : MonoBehaviour
                     playAnimation(hit.collider.gameObject.name);
                 }
 
+                if (hit.collider.gameObject.name == "6")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+
+                if (hit.collider.gameObject.name == "7")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+
+
+                if (hit.collider.gameObject.name == "8")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+
+                if (hit.collider.gameObject.name == "9")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+                if (hit.collider.gameObject.name == "10")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+                if (hit.collider.gameObject.name == "11")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+                if (hit.collider.gameObject.name == "12")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+                if (hit.collider.gameObject.name == "13")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+                if (hit.collider.gameObject.name == "14")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
+                if (hit.collider.gameObject.name == "15")
+                {
+                    playAnimation(hit.collider.gameObject.name);
+                }
 
 
             }
         }
     }
+
 }

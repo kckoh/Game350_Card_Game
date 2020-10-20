@@ -5,6 +5,9 @@ using UnityEngine;
 public class animation_front : MonoBehaviour
 {
     bool allow;
+    
+    public float local_size;
+    
 
     void Start()
     {
@@ -27,7 +30,7 @@ public class animation_front : MonoBehaviour
     IEnumerator small()
     {
         
-        Vector2 x = new Vector2(0.45f, 0.45f);
+        Vector2 x = new Vector2(local_size, local_size);
 
         if (transform.localScale.x <= x.x)
         {
@@ -50,7 +53,7 @@ public class animation_front : MonoBehaviour
     IEnumerator enlarge()
     {
         
-        Vector2 x = new Vector2(0.45f, 0.45f);
+        Vector2 x = new Vector2(local_size, local_size);
         
         if(transform.localScale.x >  x.x)
         {
