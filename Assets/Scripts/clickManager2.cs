@@ -4,6 +4,8 @@ using System.Threading;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+
+
 public class clickManager2 : MonoBehaviour
 {
 
@@ -14,6 +16,7 @@ public class clickManager2 : MonoBehaviour
     int numMatchedCard = 0;
     public int endScore;
 
+    //Go to menu function
     IEnumerator goToMenu()
     {
         yield return new WaitForSeconds(1.7f);
@@ -24,10 +27,14 @@ public class clickManager2 : MonoBehaviour
     void Start()
     {
 
+        // it initializes animation flip strings
         current_state = "first";
         ranList = new List<string> { "flip", "flip", "flip2", "flip2", "flip3", "flip3" , "flip", "flip", "flip2", "flip2", "flip3", "flip3" };
+
+        
         int n = ranList.Count;
         //https://stackoverflow.com/questions/273313/randomize-a-listt
+        // It randomnizes list array
 
         while (n > 1)
         {
@@ -40,6 +47,7 @@ public class clickManager2 : MonoBehaviour
 
     }
 
+    // play animation function
     public void playAnimation(string cardName)
     {
         int clicked_state = Int32.Parse(cardName);
@@ -100,6 +108,7 @@ public class clickManager2 : MonoBehaviour
     void Update()
     {
 
+        //when the object is clicked, it plays the animation
         if (Input.GetMouseButtonDown(0))
         {
             //click event using raycast
@@ -109,6 +118,11 @@ public class clickManager2 : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
+                if (hit.collider.gameObject.name == "return")
+                {
+                    SceneManager.LoadScene("MenuScene");
+                }
+
 
                 if (hit.collider.gameObject.name == "0")
                 {

@@ -26,6 +26,7 @@ public class ClickManager3 : MonoBehaviour
         current_state = "first";
         ranList = new List<string> { "flip", "flip", "flip2", "flip2", "flip3", "flip3", "flip", "flip", "flip2", "flip2", "flip3", "flip3", "flip", "flip", "flip2", "flip2" };
         int n = ranList.Count;
+        //random string lists
         //https://stackoverflow.com/questions/273313/randomize-a-listt
 
         while (n > 1)
@@ -39,6 +40,7 @@ public class ClickManager3 : MonoBehaviour
 
     }
 
+    //play animation function
     public void playAnimation(string cardName)
     {
         int clicked_state = Int32.Parse(cardName);
@@ -106,10 +108,15 @@ public class ClickManager3 : MonoBehaviour
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            
             if (hit.collider != null)
             {
 
-
+                //when clicked, it returns to menu
+                if(hit.collider.gameObject.name == "return")
+                {
+                    SceneManager.LoadScene("MenuScene");
+                }
                 if (hit.collider.gameObject.name == "0")
                 {
                     playAnimation(hit.collider.gameObject.name);

@@ -14,6 +14,7 @@ public class animation_front : MonoBehaviour
         allow = true;
     }
 
+    //increase the localsize
     private void OnMouseOver()
     {
         
@@ -21,12 +22,14 @@ public class animation_front : MonoBehaviour
         
     }
 
+    //decrease the localsize
     private void OnMouseExit()
     {
         StartCoroutine(small());
     }
 
 
+    //function that makes it small
     IEnumerator small()
     {
         
@@ -50,6 +53,7 @@ public class animation_front : MonoBehaviour
 
     }
 
+    //make it large when hover
     IEnumerator enlarge()
     {
         

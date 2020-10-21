@@ -14,6 +14,7 @@ public class ClickManager : MonoBehaviour
     int numMatchedCard = 0;
     public int endScore;
 
+    //go to menu function
     IEnumerator goToMenu()
     {
         yield return new WaitForSeconds(1.7f);
@@ -27,6 +28,7 @@ public class ClickManager : MonoBehaviour
         current_state = "first";
         ranList = new List<string> { "flip", "flip", "flip2", "flip2", "flip", "flip" };
         int n = ranList.Count;
+        //randomnize the lists
         //https://stackoverflow.com/questions/273313/randomize-a-listt
 
         while (n > 1)
@@ -40,6 +42,7 @@ public class ClickManager : MonoBehaviour
 
     }
 
+    //play function
     public void playAnimation(string cardName)
     {
         int clicked_state = Int32.Parse(cardName);
@@ -100,6 +103,7 @@ public class ClickManager : MonoBehaviour
     void Update()
     {
 
+        //when the card is clicked, it plays the animation given
         if (Input.GetMouseButtonDown(0))
         {
             //click event using raycast
@@ -109,7 +113,10 @@ public class ClickManager : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
-
+                if (hit.collider.gameObject.name == "return")
+                {
+                    SceneManager.LoadScene("MenuScene");
+                }
 
                 if (hit.collider.gameObject.name == "0")
                 {
